@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYBRAND | Sign up</title>
+    <link rel="stylesheet" href="../css/sign.css" />
+  </head>
+  <body>
+    <div class="form__container">
+      <header>
+        <h1>Register</h1>
+        <span>🤝</span>
+      </header>
+      <form id="inform1" method="post">
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="User Name"
+          autocomplete="false"
+        />
+        <span class="error" id="errmsg1"></span>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Address"
+          autocomplete="true"
+        />
+        <span class="error" id="errmsg2"></span>
+
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+          autocomplete="false"
+        />
+        <span class="error" id="errmsg3"></span>
+
+        <input type="checkbox" id="checkbox" name="checkbox" />
+        <label for="checkbox"
+          >Do you Agree with Our
+          <span style="color: rgb(9, 9, 149); text-decoration: underline"
+            >Terms and Condition</span
+          >
+          ?</label
+        >
+
+        <button type="submit" id="submit__button">submit</button>
+      </form>
+      <p>Forgot password. Reset password <a href="">here</a></p>
+      <p>If already have account please <a href="./login.html">Login</a></p>
+    </div>
+
+    <footer>
+      <p>xxxx &copy; Copyright 2024</p>
+      <button onclick="backToHome()">&ShortUpArrow;</button>
+    </footer>
+    <script>
+      document.getElementById("inform1").addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let userName = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let nameError = document.getElementById("errmsg1");
+        let emailError = document.getElementById("errmsg2");
+        let passwordError = document.getElementById("errmsg3");
+
+        let valid = true;
+        if (userName == "") {
+          valid = false;
+          return (nameError.innerHTML = "Your name is Required !");
+        }
+
+        if (!email) {
+          valid = false;
+          return (emailError.innerHTML = "Your email is Required !");
+        }
+
+        if (password.length >= 8 && !password) {
+          valid = false;
+          return alert("Password must  be 8 charactor long ");
+        } else {
+          valid;
+          console.log("Your Information are recorded");
+
+          let formData = [email, password, userName];
+          // let formObject = "";
+          // formData.forEach((value) => {
+          //   let key = Object.keys();
+          //   return (formObject[key] = value);
+          // });
+          localStorage.setItem("formData", JSON.stringify(formData));
+        }
+        // document.getElementById("inform1").reset();
+      });
+    </script>
+  </body>
+</html>
