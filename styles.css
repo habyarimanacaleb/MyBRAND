@@ -232,6 +232,9 @@ section:hover {
   margin-top: 50px;
   letter-spacing: 1px;
 }
+.form__container {
+  margin-top: 30px;
+}
 .about a button,
 #submit {
   margin-top: 30px;
