@@ -96,49 +96,6 @@ footer {
 .back_home p {
   padding-right: 10px;
 }
-@media screen and (max-width: 600px) {
-  nav ul li a {
-    font-size: 18px;
-  }
-  main {
-    padding-left: 10px;
-  }
-  .socialmedia,
-  .address {
-    display: none;
-  }
-  .back_home {
-    display: flex;
-    text-align: center;
-    padding-left: 10px;
-  }
-  .back_home button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-  nav {
-    margin-left: 0;
-    display: none;
-    width: 200px;
-  }
-  nav ul li a:hover {
-    color: gray;
-  }
-  footer {
-    bottom: 0;
-    position: absolute;
-    background-color: rgb(27, 26, 26);
-    color: gray;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    padding-top: 10px;
-  }
-  .home {
-    display: block;
-  }
-}
 
 section {
   animation: change 0.3s 0.1s ease-in-out alternate-reverse;
@@ -170,7 +127,7 @@ section:hover {
 
 .home img {
   max-width: 400px;
-  width: 360px;
+  width: 320px;
   border: 5px solid black;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -274,4 +231,48 @@ section:hover {
   border: 1px solid lightgray;
   outline: none;
   resize: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav ul li a {
+    font-size: 18px;
+  }
+  main {
+    padding-left: 10px;
+  }
+  .socialmedia,
+  .address {
+    display: none;
+  }
+  .back_home {
+    display: flex;
+    text-align: center;
+    padding-left: 10px;
+  }
+  .back_home button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  nav {
+    margin-left: 0;
+    display: none;
+    width: 200px;
+  }
+  nav ul li a:hover {
+    color: gray;
+  }
+  footer {
+    bottom: 0;
+    position: fixed;
+    background-color: rgb(27, 26, 26);
+    color: gray;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 10px;
+  }
+  .home {
+    display: block;
+  }
 }
